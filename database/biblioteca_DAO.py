@@ -11,3 +11,20 @@ class BibliotecaDAO:
         pass
 
     # TODO
+    def read_biblioteca(self):
+        cnx = DBConnect.get_connection()
+        if cnx is not None:
+            cursor = cnx.cursor()
+            query = "SELECT id, nome, indirizzo from BIBLIOTECA"
+            cursor.execute(query)
+            result= []
+            for row in cursor:
+                biblioteca = Biblioteca(*row)
+                result.append(biblioteca)
+
+            cursor.close()
+            cnx.close()
+            return result
+        else:
+            print("Could Not Connect")
+            return None
