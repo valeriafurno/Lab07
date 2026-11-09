@@ -63,7 +63,7 @@ class View:
             ft.Divider(),
 
             # Sezione 3: Libri
-            #TODO
+            # TODO
             self._pulsante_mostra_libri,
             ft.Container(content=self.lista_libri, height=250, border=ft.Border.all(1,ft.Colors.BLACK), padding=5)
                 )
